@@ -1,0 +1,25 @@
+SELECT * FROM dz_3_Sakun.products;
+
+SELECT name, phone FROM dz_3_Sakun.shippers;
+
+SELECT 
+    AVG(price) AS average_price,
+    MAX(price) AS maximum_price,
+    MIN(price) AS minimum_price
+FROM dz_3_Sakun.products;
+
+SELECT DISTINCT category_id, price
+FROM dz_3_Sakun.products
+ORDER BY price DESC
+LIMIT 10;
+
+SELECT COUNT(*) AS product_count
+FROM dz_3_Sakun.products
+WHERE price BETWEEN 20 AND 100;
+
+SELECT 
+    supplier_id,
+    COUNT(*) AS product_count,
+    AVG(price) AS average_price
+FROM dz_3_Sakun.products
+GROUP BY supplier_id;
